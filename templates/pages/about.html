@@ -1,5 +1,34 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
+<div class="wrapper">
+    <div class="parallax filter-black">
+        <div class="parallax-image">
+            <img src="{% static '/img/bourbon-cocktail-on-the-rocks.jpg' %}">
+        </div>
+        <div class="small-info">
+            <h1>About Us</h1>
+            <h3>Creative Tim stands for everything a designer looks in his work: clean and beautiful interfaces for great products.</h3>
+        </div>
+    </div>
 
+    <div class="section">
+           <div class="container">
+               <h2 class="section-title">We care about our work</h2>
+               <div class="row">
+                   <div class="col-md-6">
+                       <p>
+                           Creative Tim stands for everything a designer looks in his work: clean, functions interfaces for great products. The number of friends with similar attitude can only increase over time, since the vision for a better web is a wish of many designers. </p>
+                        </p>Be sure to enroll and browse around for anything that may bring extra value to your project and ask Tim wherever you see something missing. </p>
+
+                   </div>
+                     <div class="col-md-6">
+                       <p>Tim symbolizes the creative spirit inside of each and everyone of us. A designer by trade, he enjoys making the World Wide Web a more beautiful place and helping others do the same.</p>
+                       <p>
+
+He promises to put all his time and effort into providing you with handcrafted content that you will fall in love with and that will have you come back for more every time you start a new project.</p>
+                   </div>
+               </div>
+           </div>
+    </div><!-- section -->
 {% endblock  %}

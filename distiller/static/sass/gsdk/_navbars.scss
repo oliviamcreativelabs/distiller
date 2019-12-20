@@ -9,7 +9,8 @@
 .navbar{
     border: $none;
     font-size: $font-size-navbar;
-
+    margin-bottom: $navbar-margin;
+    
     .navbar-brand {
         font-weight: $font-weight-bold;
         margin: $navbar-margin-brand;
@@ -270,6 +271,9 @@
 }
 .navbar-ct-red{
     @include navbar-color($red-navbar);
+}
+.navbar-ct-gold{
+    @include navbar-color($gold-navbar);
 }
 
 .navbar-transparent{
