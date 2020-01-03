@@ -20,6 +20,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'pages.apps.PagesConfig',
+    'cocktails.apps.CocktailConfig',
     'utils',
     'django.contrib.admin',
     'django.contrib.auth',

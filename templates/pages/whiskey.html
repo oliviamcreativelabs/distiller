@@ -2,60 +2,43 @@
 {% load static %}
 {% block content %}
 <div class="section section-description">
-           <div class="container">
-               <h2 class="section-title">Description</h2>
+  <div class="container">
+    <h2 class="section-title">How Whiskey is Made</h2>
 
-               <div class="row">
-                    <div class="col-md-6">
-                       <h5>Easy to integrate</h5>
-                       <p>
-                           Creative Tim stands for everything a designer looks in his work: clean, functions interfaces for great products. The number of friends with similar attitude can only increase over time, since the vision for a better web is a wish of many designers. </p>
-                        </p>Be sure to enroll and browse around for anything that may bring extra value to your project and ask Tim wherever you see something missing. </p>
+    <div class="row">
+      <div class="col-md-6">
+        <p>
+          To make whiskey, you need three ingredients: grain, hot water, and yeast. The water breaks down the grain and
+          extracts the sugar from it. This is known as the <span data-toggle="tooltip"
+            title="Phase of distilling where grains are cooked to separate the sugar in the wort.">MASH</span> and is
+          done before <a
+            href="https://www.diffordsguide.com/encyclopedia/1124/bws/single-malt-scotch-whisky-production-6-fermentation">fermentation</a>.
+          The yeast then feeds on the sugar to create alcohol. At this point the liquid is technically a beer (sometimes
+          called the “wash”), and not potable. At this point distillation can begin.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <img src="{% static '/img/rye-seeds-close-up.webp' %}" alt="Rye Whiskey" style="width: 400px;"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="img-container">
+          <img src="../assets/img/thumb.jpg" alt="..." />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h5>Fast Development</h5>
+        <p>
+          Creative Tim stands for everything a designer looks in his work: clean, functions interfaces for great
+          products. The number of friends with similar attitude can only increase over time, since the vision for a
+          better web is a wish of many designers. </p>
+        </p>Be sure to enroll and browse around for anything that may bring extra value to your project and ask Tim
+        wherever you see something missing. </p>
+      </div>
+    </div>
+  </div>
 
-                   </div>
-                   <div class="col-md-6">
-                        <div id="description-carousel" class="carousel fade" data-ride="carousel">
-                              <!-- Wrapper for slides -->
-                              <div class="carousel-inner">
-                                <div class="item active">
-                                  <img src="../assets/img/thumb.jpg" alt="..." />
-                                </div>
-                                <div class="item">
-                                  <img src="../assets/img/thumb.jpg" alt="..." />
-                                </div>
-                                <div class="item">
-                                  <img src="../assets/img/thumb.jpg" alt="..." />
-                                </div>
-                              </div>
-
-                              <ol class="carousel-indicators">
-                                <li data-target="#description-carousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#description-carousel" data-slide-to="1"></li>
-                                <li data-target="#description-carousel" data-slide-to="2"></li>
-                              </ol>
-                        </div>
-                   </div>
-                </div>
-
-                <div class="space-50"></div>
-                <hr>
-                <div class="space-50"></div>
-
-                <div class="row">
-                   <div class="col-md-6">
-                      <div class="img-container">
-                          <img src="../assets/img/thumb.jpg" alt="..." />
-                      </div>
-                   </div>
-                   <div class="col-md-6">
-                       <h5>Fast Development</h5>
-                       <p>
-                           Creative Tim stands for everything a designer looks in his work: clean, functions interfaces for great products. The number of friends with similar attitude can only increase over time, since the vision for a better web is a wish of many designers. </p>
-                        </p>Be sure to enroll and browse around for anything that may bring extra value to your project and ask Tim wherever you see something missing. </p>
-
-                   </div>
-               </div>
-           </div>
-    </div><!-- section -->
-    <div class="space-50"></div>
+</div><!-- section -->
+<div class="space-50"></div>
 {% endblock %}
