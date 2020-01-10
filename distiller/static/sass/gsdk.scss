@@ -3,6 +3,9 @@
 
 @import "gsdk/typography";
 
+// Bootstrap Overrides
+@import "gsdk/overrides";
+
 // Core CSS
 @import "gsdk/misc";
 @import "gsdk/buttons";
@@ -35,6 +38,7 @@
 @import "gsdk/carousel";
 @import "gsdk/modal";
 @import "gsdk/chartist";
+@import "gsdk/breadcrumb";
 
 @import "gsdk/flexisel";
 @import "gsdk/responsive";

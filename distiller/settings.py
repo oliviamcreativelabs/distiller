@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 2020-01-09  22:24:12
+    'reviews',
 ]
 
 MIDDLEWARE = [
@@ -66,9 +68,12 @@ WSGI_APPLICATION = 'distiller.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'distdb',
+        'USER': 'postgres',
+        'PASSWORD': 'distadmin',
+        'HOST': 'localhost'
+        }
 }
 
 
@@ -113,3 +118,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'distiller/static')
 ]
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

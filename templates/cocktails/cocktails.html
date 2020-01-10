@@ -1,207 +1,106 @@
 {% extends "base.html" %}
 <!-- List of cocktails -->
-
 {% block  content %}
-  <section id="showcase-inner" class="py-5 text-white">
+<!-- Breadcrumb -->
+<section id="bootstrap-overrides">
     <div class="container">
-      <div class="row text-center">
-        <div class="col-md-12">
-          <h1 class="display-4">ROCKIN' 'COCKTAILS!</h1>
-          <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, pariatur!</p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'index' %}">
+                        <i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="breadcrumb-item active"> Browse Cocktails</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+<section id="showcase-inner" class="py-5 text-white">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h2 class="wow pulse"
+                    style="font-family: 'Fredoka One', cursive; color: #E81AD3; text-transform: uppercase;">Rockin'
+                    Cocktails</h2>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
-
-  <!-- Breadcrumb -->
-  <section id="bc" class="mt-3">
-    <div class="container">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="index.html">
-              <i class="fas fa-home"></i> Home</a>
-          </li>
-          <li class="breadcrumb-item active"> Browse Listings</li>
-        </ol>
-      </nav>
-    </div>
-  </section>
-
-  <!-- Listings -->
-  <div class="section ">
-    	<div class="container container-border">
-        	<div class="title">
-        		<h4>Related Products</h4>
-        		<p>Take a look, we think they would be great togheter</p>
-        	</div>
-          	<div class="row">
-                <div class="col-md-4">
-                    <div class="card card-product card-plain">
-                        <div class="image">
-                            <a href="#">
-                                <img src="../assets/img/product.jpg" alt="..."/>
-                            </a>
-                        </div>
-                        <div class="content">
-                            <a href="#">
-                                <h4 class="title">Lutwyche</h4>
-                            </a>
-                            <p class="description">
-                               Blue check wool and cashmere-blend blazer
-                            </p>
-                            <div class="footer">
-                                <span class="price"> € 3,330</span>
-                                <button class="btn btn-danger btn-simple btn-hover pull-right" rel="tooltip" title="" data-placement="left" data-original-title="Add to wishlist">
-                                    <i class="fa fa-heart-o"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div> <!-- end card -->
+</section>
+<!-- Cocktails -->
+<div class="section ">
+    <div class="container container-border">
+        <div class="row">
+            {% if cocktails %}
+            {% for cocktail in cocktails %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="image">
+                    <a href="#">
+                        <img src="{{ cocktail.photo_main.url }}" alt="..."  style="width: 100px; height: 100px;"/>
+                    </a>
                 </div>
-                <div class="col-md-4">
-                    <div class="card card-product card-plain">
-                        <div class="image">
-                            <a href="#">
-                                <img src="../assets/img/product.jpg" alt="..."/>
-                            </a>
-                        </div>
-                        <div class="content">
-                            <a href="#">
-                                <h4 class="title">Lutwyche</h4>
-                            </a>
-                            <p class="description">
-                               Blue check wool and cashmere-blend blazer
-                            </p>
-                            <div class="footer">
-                                <span class="price"> € 3,330</span>
-                                <button class="btn btn-danger btn-simple  pull-right" rel="tooltip" title="" data-placement="left" data-original-title="Remove from wishlist">
-                                    <i class="fa fa-heart"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div> <!-- end card -->
-                 </div>
-                 <div class="col-md-4">
-                    <div class="card card-product card-plain">
-                        <div class="image">
-                            <a href="#">
-                                <img src="../assets/img/product.jpg" alt="..."/>
-                            </a>
-                        </div>
-                        <div class="content">
-                            <a href="#">
-                                <h4 class="title">Lutwyche</h4>
-                            </a>
-                            <p class="description">
-                               Blue check wool and cashmere-blend blazer
-                            </p>
-                            <div class="footer">
-                                <span class="price"> € 3,330</span>
-                                <button class="btn btn-danger btn-simple btn-hover pull-right" rel="tooltip" title="" data-placement="left" data-original-title="Add to wishlist">
-                                    <i class="fa fa-heart-o"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div> <!-- end card -->
-                 </div>
-            </div> <!-- end row -->
-      	</div>
-    </div>
-    <div class="section">
-    	<div class="container container-border">
-			<div class="title">
-        		<h4>Viewed Products</h4>
-            	<p>These are your recently viewed products</p>
-        	</div>
-        	<ul class="row" id="flexiselDemo2">
-            	<li class="col-md-2">
-                    <div class="card card-product card-plain">
-                        <div class="image">
-                            <a href="#">
-                                <img src="../assets/img/product.jpg" alt="..."/>
-                            </a>
-                        </div>
-                        <div class="content">
-                            <a href="#">
-                                <h4 class="title">Lutwyche</h4>
-                            </a>
-                        </div>
-                    </div> <!-- end card -->
-                </li>
-                <li class="col-md-2">
-                    <div class="card card-product card-plain">
-                        <div class="image">
-                            <a href="#">
-                                <img src="../assets/img/product.jpg" alt="..."/>
-                            </a>
-                        </div>
-                        <div class="content">
-                            <a href="#">
-                                <h4 class="title">Canali</h4>
-                            </a>
-                        </div>
-                    </div> <!-- end card -->
-                </li>
-				<li class="col-md-2">
-				    <div class="card card-product card-plain">
-				        <div class="image">
-				            <a href="#">
-				                <img src="../assets/img/product.jpg" alt="..."/>
-				            </a>
-				        </div>
-				        <div class="content">
-				            <a href="#">
-				                <h4 class="title">Lutwyche</h4>
-				            </a>
-				        </div>
-				    </div> <!-- end card -->
-				</li>
-				<li class="col-md-2">
-				    <div class="card card-product card-plain">
-				        <div class="image">
-				            <a href="#">
-				                <img src="../assets/img/product.jpg" alt="..."/>
-				            </a>
-				        </div>
-				        <div class="content">
-				            <a href="#">
-				                <h4 class="title">Lutwyche</h4>
-				            </a>
-				        </div>
-				    </div> <!-- end card -->
-				</li>
+                <div class="content">
+                    <a href="#">
+                        <h4 class="title">{{ cocktail.title }}</h4>
+                    </a>
+                    <h4>
+                    <i class="fas fa-glass-whiskey"><span style="font-family: 'Abel', sans-serif;"> GLASS TYPE</span></i>
+                    </h4>
+                        <p class="glass">
+                            {{ cocktail.glass }}
+                        </p>
+                    <h4>
+                    <i class="fas fa-clipboard-list"><span style="font-family: 'Abel', sans-serif;"> DESCRIPTION</span></i>
+                    <p class="description">
+                        {{ cocktail.description }}
+                    </p>
+                    <h4>
+                    <i class="fas fa-mortar-pestle"><span style="font-family: 'Abel', sans-serif;">  INGREDIENTS</span></i>
+                    </h4>
+                    <ul>
+                        <li>
+                            {{ cocktail.ingredient1 }}
+                            {{ cocktail.measure1 }}
+                        </li>
+                        <li>
+                            {{ cocktail.ingredient2 }}
+                            {{ cocktail.measure2 }}
+                        </li>
+                        <li>
+                            {{ cocktail.ingredient3 }}
+                            {{ cocktail.measure3 }}
+                        </li>
+                        <li>
+                            {{ cocktail.ingredient4 }}
+                            {{ cocktail.measure4 }}
+                        </li>
+                    </ul>
+                    <h4>
+                        <i class="fas fa-list-ol"><span style="font-family: 'Abel', sans-serif;"> INSTRUCTIONS</span></i>
+                    </h4>
+                    <p class="instructions">
+                       {{ cocktail.instructions }}
+                    </p>
 
-				<li class="col-md-2">
-				    <div class="card card-product card-plain">
-				        <div class="image">
-				            <a href="#">
-				                <img src="../assets/img/product.jpg" alt="..."/>
-				            </a>
-				        </div>
-				        <div class="content">
-				            <a href="#">
-				                <h4 class="title">Lutwyche</h4>
-				            </a>
-				        </div>
-				    </div> <!-- end card -->
-				</li>
-
-				<li class="col-md-2">
-				     <div class="card card-product card-plain">
-				        <div class="image">
-				            <a href="#">
-				                <img src="../assets/img/product.jpg" alt="..."/>
-				            </a>
-				        </div>
-				        <div class="content">
-				            <a href="#">
-				                <h4 class="title">Lutwyche</h4>
-				            </a>
-				       </div>
-				    </div> <!-- end card -->
-				</li>
-			</ul>
-		</div>
-    </div>
+                    <div class="footer" style="background-color: transparent;">
+                        <span class="price"> € 3,330</span>
+                        <button class="btn btn-danger btn-simple btn-hover pull-right" rel="tooltip" title=""
+                            data-placement="left" data-original-title="Add to wishlist">
+                            <i class="fa fa-heart-o"></i>
+                        </button>
+                    </div>
+                </div>
+            </div> <!-- end card -->
+            {% endfor %}
+            {% else %}
+            <div class="col-md-12">
+                <p>No cocktails available</p>
+            </div>
+            {% endif %}
+        </div>
+    </div> <!-- end row -->
+</div>
+<div class="section">
+    <div class="container container-border">
+    </div> <!-- end card -->
+</div>
 {% endblock  %}

@@ -1,8 +1,17 @@
 from django.shortcuts import render
 
+from . models import Cocktail
 
-def index(request):
-    return render(request, 'cocktails/cocktails.html')
+
+def index(request):  
+    cocktails = Cocktail.objects.all()
+
+    context = {
+        'cocktails': cocktails
+    }
+
+    # Bring in info by using a dictionary
+    return render(request, 'cocktails/cocktails.html', context)
 
 
 def cocktail(request):
