@@ -10,6 +10,14 @@ from .models import Review, Whiskey
 We have defined four different views (one for each of the four different url mappings). 
 Each function gets at least a request object parameter, and optionally more parameters as specified in the url mapping. For example, the review_detail function gets also a review_id parameter as we specified in the mapping.
 '''
+
+
+def review(request):
+    latest_review_list = Review.objects.order_by('-pub_date')[:9]
+    context = {'latest_review_list': latest_review_list}
+    return render(request, 'reviews/reviews.html', context)
+
+
 #  =====================================================
 # gets a list of the latest 9 reviews and renders it using `reviews/list.html'.
 
